@@ -1,21 +1,20 @@
 import * as React from 'react';
 import { StyleSheet, View, Text} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { Link } from 'expo-router';
 import SvgLogo from '../components/SvgLogo';
-import { useFonts, Inter_900Black, Inter_700Bold} from '@expo-google-fonts/inter';
-import AppLoading from 'expo-app-loading';
+import { useFonts, Inter_900Black, Inter_700Bold, Inter_400Regular} from '@expo-google-fonts/inter';
+
 
 export default function App() {
 
   //Font configuration
   let [fontsLoaded] = useFonts({
     Inter_900Black,
-    Inter_700Bold
+    Inter_700Bold,
+    Inter_400Regular
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
   }
 
   return (
@@ -29,6 +28,7 @@ export default function App() {
 
       <SvgLogo></SvgLogo>
       <Text style={styles.logoName}> To Do List</Text>
+      <Text style={styles.subtitle}> Comece a escrever suas ideias e tarefas!</Text>
       <Link style={styles.btn} href={"/screens/HomeTasks"}>{""}Entrar</Link>
 
       </View>
@@ -45,14 +45,15 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
   },
-  tinyLogo:{
-    width:50,
-    height:50
-  },
   logoName:{
     color: '#8A5ED1',
     fontFamily: 'Inter_900Black',
     fontSize: 36, 
+  },
+  subtitle:{
+    color: '#6B6572',
+    fontFamily: 'Inter_400Regular',
+    fontSize: 14, 
   },
   btn: {
     display: 'flex',

@@ -1,5 +1,5 @@
 import { Feather } from '@expo/vector-icons';
-import {Container, TaskDone, TaskText, TaskXp, TaskXpContainer} from './styles'
+import {Container, TaskDone, TaskText, TaskXpContainer} from './styles'
 
 type Props = {
     title: string;
@@ -11,13 +11,12 @@ export function Task({title, status, onCheck, onRemove} : Props){
     return (
         <Container>
             <TaskDone onPress={onCheck}>
-                <Feather name="square" size={30} color="white"/>
+                <Feather name="circle" size={24} color="#8A5ED1"/>
             </TaskDone>
             <TaskText>{title}</TaskText>
             <TaskXpContainer>
-            <TaskXp>1{'\n'}XP</TaskXp>
+                <Feather name="trash" size={24} color="#6B6572"/>
             </TaskXpContainer>
-            
         </Container>
     );
 }

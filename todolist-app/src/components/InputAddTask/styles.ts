@@ -7,8 +7,9 @@ export const Container = styled.TouchableOpacity`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color:#F6F1FF;
-    border-radius: 10px;
+    background-color:#FCFCFC;
+    border: 1px solid #D1CBD7;
+    border-radius: 8px;
 `;
 
 export const InputTask = styled.TextInput`
@@ -23,8 +24,8 @@ export const CreateTaskButton = styled.TouchableOpacity`
     height: 56px;
     width: 56px;
     padding:5px;
-    background-color:#10032A;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color:#8A5ED1;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 `;
 

@@ -1,8 +1,10 @@
 import { Task } from "@/src/components/Task";
-import { TypeTaskHeader } from "@/src/components/TypeTaskHeader";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, FlatList, Alert } from "react-native";
 import { InputAddTask } from "@/src/components/InputAddTask";
+import { HeaderLogo } from "@/src/components/HeaderLogo";
+import { TaskCounters } from "@/src/components/TaskCounters";
+import { Feather } from '@expo/vector-icons';
 
 export default function HomeTasks() {
 
@@ -22,7 +24,6 @@ export default function HomeTasks() {
     const newTask = {description: taskText, check: false};
     setTasks([...tasks, newTask]);
     setTaskText('');
-
     
   }
 
@@ -39,8 +40,12 @@ export default function HomeTasks() {
   return (
     
     <View style={styles.container}>
-        < TypeTaskHeader title={"Hoje"} num={countTask}/>
+
+    <HeaderLogo></HeaderLogo>
+
+        
         <InputAddTask onPress={handleTaskAdd} onChangeText={setTaskText} value={taskText} />
+        <TaskCounters num={countTask}/>
         
         <FlatList
           data={tasks}
@@ -55,9 +60,9 @@ export default function HomeTasks() {
             )
           }
           ListEmptyComponent={() => (
-            <View>
-              <Text
-              style={styles.text}> Não há tarefas cadastradas!</Text>
+            <View style={styles.noTasks}>
+              <Feather name="clipboard" size={32} color="#6B6572" padding={10}/>
+              <Text style={styles.text}>Você ainda não tem tarefas cadastradas.</Text>
             </View>
           )}
         />
@@ -72,7 +77,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
-    paddingTop: 64,
+    paddingTop: 16,
     gap: 16,
   },
   background: {
@@ -83,7 +88,15 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   text: {
-    color: "#ffffff",
+    color: "#6B6572",
+    fontFamily: 'Inter_600SemiBold',
+  },
+  noTasks:{
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop:"10%"
+    
   }
 
 });

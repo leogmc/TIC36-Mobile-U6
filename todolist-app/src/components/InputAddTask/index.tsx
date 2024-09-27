@@ -21,7 +21,7 @@ export function InputAddTask({onPress, onChangeText, value} : Props){
         </InputTask>
 
         <CreateTaskButton onPress={onPress}>
-            <Feather name="plus-square" size={32} color="#B692F8"/>
+            <Feather name="plus-square" size={32} color="#FCFCFC"/>
         </CreateTaskButton>
     
     
