@@ -5,11 +5,22 @@ export const Container = styled.TouchableOpacity`
     height: 50px;
     flex-direction: row;
     align-items: center;
-    content-align: center;
     justify-content: space-between;
     background-color: transparent;
     padding:10px;
 `;
+
+
+export const TaskText =styled.Text`
+    color: #6B6572;
+    font-family: 'Inter-SemiBold';
+    font-size: 14px;
+    padding: 5px;
+`
+
+export const Task =styled.View`
+    flex-direction: row;
+`
 
 export const TaskCreatedCounter = styled.Text`
     color: #6F3CC3;
@@ -22,7 +33,7 @@ export const TaskCreatedCounter = styled.Text`
     width: 30px;               
     height: 30px;              
     line-height: 20px; 
-    font-family: 'Inter_600SemiBold';
+    font-family: 'Inter-SemiBold';
 
 `
 
@@ -37,7 +48,7 @@ export const TaskDoneCounter = styled.Text`
     width: 30px;
     height: 30px;
     line-height: 20px; 
-    font-family: 'Inter_600SemiBold';
+    font-family: 'Inter-SemiBold';
 `
 
 

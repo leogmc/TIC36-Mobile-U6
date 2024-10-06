@@ -15,11 +15,35 @@ export const Container = styled.TouchableOpacity`
     margin-bottom: 16px;
 `;
 
+
+export const TaskTextContainer = styled.Text`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    color: #262428;
+    font-size: 14px;
+    overflow: auto;
+    width: 50%;
+    margin-left: -15%;
+
+`
+
 export const TaskText = styled.Text`
     color: #262428;
     font-size: 14px;
     overflow: auto;
-    fontFamily: 'Inter_400Regular'
+
+`
+
+
+export const TaskTextLineThrough = styled.Text`
+    color: #262428;
+    font-size: 14px;
+    overflow: auto;
+    text-decoration: line-through;
 
 `
 
@@ -28,15 +52,15 @@ export const TaskDone = styled.TouchableOpacity`
    height: 56px; 
    justify-content: center;
    align-items: center;
+
 `
 
-export const TaskXpContainer = styled.View`
+export const TaskDelete = styled.TouchableOpacity`
    width: 56px;
    height: 56px;
    justify-content: center;
    align-items: center;
-   border-left-width: 1px;
-   border-color: #6B6572;
+
 `;
 
 export const TaskXp = styled.Text`
